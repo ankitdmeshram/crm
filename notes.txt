@@ -1,0 +1,18 @@
+Admin 
+ - Users 
+    - id (Primary Key)
+    - name 
+    - email
+    - phone 
+    - password
+    - rand_pass
+    - company
+    - website
+    - address
+    - city 
+    - state 
+    - zip code 
+    - country 
+    - updated_at 
+    - updated_by
+    - created_at 
