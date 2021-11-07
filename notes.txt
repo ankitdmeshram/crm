@@ -1,17 +1,21 @@
-Admin 
- - Users 
+Database Tables 
+
+ - Customers 
     - id (Primary Key)
     - name 
     - email
     - phone 
-    - password
-    - rand_pass
+    - telephone
     - company
     - website
     - address
     - city 
     - state 
-    - zip code 
+    - zip_code 
+    - country
+    - tag
+    - groups
+    - notes
     - country 
     - updated_at 
     - updated_by
