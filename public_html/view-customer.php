@@ -2,10 +2,24 @@
 
 <?php 
 
+if(isset($_POST['update_user'])){
+    update_customer();
+}
+
+?>
+
+<?php 
+
 $id = escape_string($_GET['id']);
+
 
 $query = query("SELECT * FROM customers WHERE id = $id");
 confirm($query , 'n');
+
+
+
+
+
 
 while($row = fetch_array($query))   {
 
@@ -18,11 +32,16 @@ while($row = fetch_array($query))   {
     $created_at = $row['created_at'];
     $telephone = $row['telephone'];
     $website = $row['website'];
-    
-
+    $address = $row['address'];
+    $city = $row['city'];
+    $state = $row['state'];
+    $zip = $row['zip_code'];
+    $country = $row['country'];
+    $tag = $row['tag'];
+    $group = $row['groups'];
+    $notes = $row['notes'];
 
     // echo "<script>alert('" . $name . "')</script>";
-
 ?>
 
     <div class="container-fluid gs-cont">
@@ -41,12 +60,12 @@ while($row = fetch_array($query))   {
 
                     <form method="post">
 
-
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                 <label >Name</label>
+                                <input type="hidden" name="id" value="<?php echo $id; ?>">
                                 <input type="text" name="name" class="form-control" value="<?php echo  $name; ?>"  >
                                 </div>
                             </div>
@@ -129,30 +148,22 @@ while($row = fetch_array($query))   {
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                            <button type="submit" name="add_user" class="btn btn-primary">Submit</button>
+                            <button type="submit" name="update_user" class="btn btn-primary">Submit</button>
 
                             </div>
-
                           
-<?php } ?>                          
+                                <?php } ?>                          
 
                         </div>
                     </div>
 
-
-
-
-                     
                     </form>
-
-
 
                 </div>
 
                 <!-- /////////////////////////////////////////////////////////////// -->
                 <!-- /////////////////contents ends here ////////////////////////  -->
                 <!-- /////////////////////////////////////////////////////////////// -->
-
 
             </div>
         </div>
